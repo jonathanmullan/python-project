@@ -7,7 +7,7 @@ from playwright.sync_api import Playwright, sync_playwright
 @pytest.fixture(scope="module")
 def browser_context():
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=False)
+        browser = playwright.chromium.launch(headless=True)
         context = browser.new_context()
         yield context
         context.close()
